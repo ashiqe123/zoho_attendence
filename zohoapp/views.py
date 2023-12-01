@@ -44,6 +44,7 @@ from django.template import loader
 from .models import customer  # Import your Customer model
 from django.db.models import Max
 from django.views.decorators.csrf import csrf_exempt
+from django.urls import reverse
 
 
 def index(request):
@@ -17453,6 +17454,7 @@ def projdeletefile(request,aid):
 def holidays(request,date):
     company = company_details.objects.get(user=request.user)
     all_events = Events.objects.all()
+    print(all_events)
     event_counts = {}
     event_dict = {}
     print(date)
@@ -17471,7 +17473,7 @@ def holidays(request,date):
 
 
     events = Events.objects.filter(start__gte=start_date, start__lt=end_date)
-
+    print(events)
     # Create a dictionary to store the events by day
     
     for event in events:

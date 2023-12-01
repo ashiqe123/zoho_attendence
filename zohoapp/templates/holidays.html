@@ -228,7 +228,8 @@
             var monthNumber = monthNameToNumber[parts[0]];
             var formattedMonth = ('0' + monthNumber).slice(-2);
             var tot = new Date(year, monthNumber, 0).getDate();
-
+            console.log(view.end)
+            console.log('tot')
             var monthYear = year + '-' + formattedMonth;
 
             $('#currentmonthyear').text(monthYear);

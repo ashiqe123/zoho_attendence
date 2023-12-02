@@ -1548,7 +1548,8 @@ class Events(models.Model):
     name = models.CharField(max_length=255,null=True,blank=True)
     start = models.DateTimeField(null=True,blank=True)
     end = models.DateTimeField(null=True,blank=True)
-    
+    class Meta:
+        db_table = "tblevents"
 class projectfiles(models.Model):
     attachment=models.FileField(upload_to='doc/',null=True)
     proj=models.ForeignKey(project1,on_delete=models.CASCADE)
